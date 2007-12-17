@@ -1,0 +1,27 @@
+//#define IDC_STATIC (-1)
+#include "resource.h"
+#include <windows.h>
+
+IDI_MAIN ICON main.ico /* 16 x 16 monochrome (first in the icon's
+directory, so that it is used on the system notification tray (whatever it's
+really called); also 32 x 32 monochrome. This icon should be first in the
+resources because it it the icon for the exe file. */
+
+/*ID_MAIN MENU BEGIN
+  POPUP "&Calendar" BEGIN
+    MENUITEM "&About\tCtrl+F1", IDM_ABOUT
+    MENUITEM "E&xit", IDM_EXIT
+  END
+  POPUP "&File" BEGIN
+    MENUITEM "&New\tCtrl+N", IDM_NEW
+    MENUITEM "&Open . . .\tCtrl+O", IDM_OPEN
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit", IDM_EXIT
+  END
+END
+
+ID_MAIN ACCELERATORS BEGIN
+  VK_F1, IDM_ABOUT, VIRTKEY CONTROL
+  "N", IDM_NEW, VIRTKEY CONTROL
+  "O", IDM_OPEN, VIRTKEY CONTROL
+END*/

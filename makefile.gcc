@@ -1,0 +1,27 @@
+# Makefile for "tul" using GCC
+# By Martin Panter
+
+#could be using the -fno-exceptions flag??
+
+CXX = g++
+CXXFLAGS = -Wall -O
+
+EXENAME = tul
+#~ LIBS=#-lWs2_32 #-lcomdlg32 -lwinmm
+OBJS = main.o resource.o shield.o
+
+all: $(EXENAME).exe
+.PHONY: all
+
+$(EXENAME).exe: $(OBJS)
+	g++ -Wl,-s -mwindows -o $@ $(OBJS)
+
+CXX_CMD = $(CXX) -c $(CXXFLAGS) -o $@ $<
+main.o: main.cpp main.hpp resource.h shield.hpp
+	$(CXX_CMD)
+
+resource.o: resource.rc resource.h main.ico
+	windres $< $@
+
+shield.o: shield.cpp shield.hpp
+	$(CXX_CMD)
